@@ -3,47 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio 2357</title>
-    <!-- Optional: Add a favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
+    <title>Simple Online Studio | Web Development Services</title>
+    
     <style>
-        html, body {
-            height: 100%;
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #f5f5f5;
+            --secondary-text: #666666;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
         }
+
         body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f5f5f5;
-            overscroll-behavior-y: none;
-            font-family: Arial, Helvetica, sans-serif;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .centered-div {
-            text-align: center;
+
+        header {
+            margin-bottom: 8rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: lowercase;
+        }
+
+        main {
+            flex-grow: 1;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero {
+            margin-bottom: 6rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-desc {
+            font-size: 1.5rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 8rem;
+        }
+
+        .service-item h3 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            color: var(--secondary-text);
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 4rem;
+            border-top: 1px solid var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--secondary-text);
+        }
+
+        .contact-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid var(--text-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem;
+            }
+            header {
+                margin-bottom: 4rem;
+            }
+            h1 {
+                font-size: 2.25rem;
+            }
+            .hero-desc {
+                font-size: 1.25rem;
+            }
+            .services {
+                gap: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="centered-div">
-    <h1>Studio<br>2357</h1>
-    <div>
+    <header>
+        <div class="brand">Simple Online Studio</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Websites made simple.</h1>
+            <p class="hero-desc">Independent web development studio specializing in modern engineering and thoughtful design.</p>
+        </section>
+
+        <section class="services">
+            <div class="service-item">
+                <h3>01. Engineering</h3>
+                <p>Full-stack development with a focus on HTML, JavaScript, and Responsive Design.</p>
+            </div>
+            <div class="service-item">
+                <h3>02. User Interface</h3>
+                <p>UI/UX design systems built for clarity, accessibility, and seamless interaction.</p>
+            </div>
+            <div class="service-item">
+                <h3>03. Performance</h3>
+                <p>Technical optimization to ensure speed, SEO excellence, and robust security.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 Simple Online Studio</div>
+        <div>
+            <a href="mailto:contact@simpleonline.studio" class="contact-link">Get in touch</a>
+        </div>
+    </footer>
 </body>
 </html>
